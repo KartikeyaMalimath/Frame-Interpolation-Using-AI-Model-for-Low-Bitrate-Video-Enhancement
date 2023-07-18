@@ -18,7 +18,7 @@ def split_video_into_frames(video_path, output_directory):
             break
 
         # Generate the output file path
-        output_file = os.path.join(output_directory, f"frame_{frame_count}.jpg")
+        output_file = os.path.join(output_directory, f"frame_{frame_count}.png")
 
         # Save the frame as an image file
         cv2.imwrite(output_file, frame)
@@ -31,6 +31,6 @@ def split_video_into_frames(video_path, output_directory):
     print(f"Split {frame_count} frames from the video.")
 
 if __name__ == "__main__":
-    video_path = "./input_10fps.mp4"
-    output_directory = "D:\\University_of_Leeds\\MSc Project\\msc_project\\data\\"
+    video_path = "./test_input_highframe.mp4"
+    output_directory = "D:\\University_of_Leeds\\MSc Project\\msc_project\\HD_data\\"
     split_video_into_frames(video_path, output_directory)

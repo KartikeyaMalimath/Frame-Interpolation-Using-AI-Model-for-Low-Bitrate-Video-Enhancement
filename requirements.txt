@@ -1,11 +1,15 @@
---find-links https://download.pytorch.org/whl/cu117
-torch==1.13.1+cu117
+torch==1.13.1
 torchvision==0.14.1+cu117
 torchaudio==0.13.1
-opencv-python==4.7.0.72
-scikit-image==0.21.0
-dall-e
+opencv-python==4.5.4.58
+scikit-image==0.20.0rc3
+keras=2.6.0
+keras_cv==0.5.0
 Pillow
-requests
-attrs
+requests==2.27.1
+numpy==1.22.2
+matplotlib==3.5.1
+tensorflow==2.9.0
+keras-core
+tensorflow-directml-plugin
 

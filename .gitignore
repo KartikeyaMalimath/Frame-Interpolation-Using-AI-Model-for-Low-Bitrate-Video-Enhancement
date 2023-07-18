@@ -1,3 +1,8 @@
+#additional ignores
+Important_docs/
+test_input_highframe.mp4
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
