@@ -37,7 +37,7 @@ def convert_video_to_fps(input_video_path, output_video_path, target_fps):
     print(f"Video converted and saved to: {output_video_path}")
 
 if __name__ == "__main__":
-    input_video_path = "./test_input_highframe.mp4"
-    output_video_path = "./input_10fps.mp4"
+    input_video_path = "input/test_input_highframe.mp4"
+    output_video_path = "input/input_10fps.mp4"
     target_fps = 10
     convert_video_to_fps(input_video_path, output_video_path, target_fps)

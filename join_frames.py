@@ -1,9 +1,12 @@
 import os
+import re
+
 import cv2
 
 def frames_to_video(frames_directory, output_video_path, fps):
     # Get the list of frames in the directory
-    frames = sorted(os.listdir(frames_directory), key=lambda x: int(x.split("_")[1].split(".")[0]))
+    frames = sorted(os.listdir(frames_directory), key=lambda x: [int(c) if c.isdigit() else c for c in re.split(r'(\d+)', x)])
+    print(frames)
 
     # Read the first frame to get frame size
     first_frame_path = os.path.join(frames_directory, frames[0])
@@ -35,7 +38,7 @@ def frames_to_video(frames_directory, output_video_path, fps):
     print(f"Video saved to: {output_video_path}")
 
 if __name__ == "__main__":
-    frames_directory = "D:\\University_of_Leeds\\MSc Project\\msc_project\\data\\"
-    output_video_path = "D:\\University_of_Leeds\\MSc Project\\msc_project\\output\\outputvideo.mp4"
+    frames_directory = "D:\\University_of_Leeds\\MSc Project\\msc_project\\test_process\\"
+    output_video_path = "D:\\University_of_Leeds\\MSc Project\\msc_project\\output\\outputvideo3.mp4"
     fps = 10
     frames_to_video(frames_directory, output_video_path, fps)
