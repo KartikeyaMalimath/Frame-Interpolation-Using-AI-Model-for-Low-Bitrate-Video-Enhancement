@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/processing.css') }}" type="text/css">
+
+</head>
+<body>
+    <h1>Frame Interpolation Using AI-Model for Low Bitrate Video Enhancement</h1>
+    <div class="login-box">
+        <h2>Uploaded Video Details</h2>
+        <video id="myVideo" width="520" height="250" controls>
+            <source src="/get_video" type="video/mp4" />
+        </video>
+    </div>
+
+    <footer>
+        <p>Copyright © <script>
+            const year = new Date().getFullYear();
+            document.write(year);
+        </script>, Developed by Kartikeya P Malimath</p>
+    </footer>
+
+</body>
+</html>

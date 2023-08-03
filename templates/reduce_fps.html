@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/index.css') }}" type="text/css">
+</head>
+<body>
+    <h1>Frame Interpolation Using AI-Model for Low Bitrate Video Enhancement</h1>
+    <div class="login-box">
+        <h2>Upload Video to Reduce FPS</h2>
+        <form id="upload" action="/reduce_fps_upload" method="post" enctype="multipart/form-data">
+            <div class="user-box">
+<!--                <label for="video">Select a video to upload:</label>-->
+                <input type="file" id="video" name="video" accept="video/*">
+            </div>
+            <div class="user-box">
+                <select name="fps" id="fps">
+                  <option value=0>least FPS (7 - 10)</option>
+                  <option value=1>Intermediate FPS (11-15)</option>
+                </select>
+            </div>
+            <a href="#" onclick="document.getElementById('upload').submit();">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Upload Video
+            </a>
+
+        </form>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; <script>
+            const year = new Date().getFullYear();
+            document.write(year);
+        </script>, Developed by Kartikeya P Malimath</p>
+    </footer>
+</body>
+</html>

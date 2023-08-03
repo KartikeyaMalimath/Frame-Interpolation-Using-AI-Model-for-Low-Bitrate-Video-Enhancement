@@ -5,4 +5,10 @@ mediapy
 numpy
 tensorflow_hub
 opencv-python
+fastapi
+uvicorn
+jinja2
+python-multipart
+moviepy
+clip
 

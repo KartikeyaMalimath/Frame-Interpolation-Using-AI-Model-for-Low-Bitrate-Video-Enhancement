@@ -1,7 +1,7 @@
 #additional ignores
 Important_docs/
-input/test_input_highframe.mp4
-failed_experiments/stable_diffusion/data_reduced.pt
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

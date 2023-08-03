@@ -31,6 +31,6 @@ def split_video_into_frames(video_path, output_directory):
     print(f"Split {frame_count} frames from the video.")
 
 if __name__ == "__main__":
-    video_path = "./input/input_10fps.mp4"
+    video_path = "./input/input_8fps.mp4"
     output_directory = "D:\\University_of_Leeds\\MSc Project\\msc_project\\data\\"
     split_video_into_frames(video_path, output_directory)
