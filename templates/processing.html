@@ -8,10 +8,30 @@
 <body>
     <h1>Frame Interpolation Using AI-Model for Low Bitrate Video Enhancement</h1>
     <div class="login-box">
-        <h2>Uploaded Video Details</h2>
-        <video id="myVideo" width="520" height="250" controls>
-            <source src="/get_video" type="video/mp4" />
-        </video>
+        <form id="init" action="/system_usage_charts" method="post" enctype="multipart/form-data">
+            <h2>Uploaded Video Details</h2>
+            <input type="hidden" name="current_fps" value="{{ data.fps }}">
+            <input type="hidden" name="target_fps" value="{{ data.target_fps }}">
+            <input type="hidden" name="input_path" value="{{ data.video_path }}">
+            <div class="user-box">
+                <video id="myVideo" width="520" height="250" controls>
+                    <source src="/video?video_path={{ data.video_path }}" type="video/mp4" />
+                </video>
+            </div>
+            <div class="user-box">
+                <h2 id="current_fps">Current FPS: {{ data.fps }} FPS</h2>
+                <h2 id="target_fps">Target FPS: {{ data.target_fps }} FPS</h2>
+            </div>
+            <div style="text-align:center">
+                <a href="#" onclick="document.getElementById('init').submit();">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Initiate Frame Interpolation
+                </a>
+            </div>
+        </form>
     </div>
 
     <footer>

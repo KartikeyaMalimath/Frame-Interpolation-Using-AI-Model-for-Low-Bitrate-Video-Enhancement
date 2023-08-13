@@ -1,40 +1,51 @@
+import re
 import moviepy.editor as mp
 import glob
 import os
 
-# Define the input audio file name
-audio_file = "input/input_8fps_audio.mp3"
+class MergeFrames:
 
-# Get the list of frame files in the /data folder
-frame_files = sorted(glob.glob("D:\\University_of_Leeds\\MSc Project\\msc_project\\data\\*.png"), key=os.path.getmtime)
+    def __init__(self, **kwargs):
 
-# Get the number of frames in the /data folder
-frame_count = len(frame_files)
+        # Define the input audio file name
+        self.audio_file = "audio_temp/temp_audio.mp3"
+        self.frames_file = "D:\\University_of_Leeds\\MSc Project\\msc_project\\processing\\"
 
-# Check if the audio file exists
-if os.path.exists(audio_file):
-    # Create an audio clip object from the audio file
-    audio = mp.AudioFileClip(audio_file)
+        self.file_names = os.listdir(self.frames_file)
+        # Get the list of frame files in the /data folder
+        self.frame_files = sorted(self.file_names, key=lambda x: [int(c) if c.isdigit() else c for c in re.split(r'(\d+)', x)])
 
-    # Get the duration of the audio clip in seconds
-    duration = audio.duration
+        # Get the number of frames in the /data folder
+        self.frame_count = len(self.frame_files)
 
-else:
-    # Ask the user to enter the duration of the video in seconds
-    duration = float(input("Please enter the duration of the video in seconds: "))
+        # Check if the audio file exists
+        if os.path.exists(self.audio_file):
+            # Create an audio clip object from the audio file
+            self.audio = mp.AudioFileClip(self.audio_file)
 
-# Calculate the frame rate based on the number of frames and the duration
-fps = frame_count / duration
-fps = round(fps, 1)
-# Define the output file name with the frame rate
-output_file = f"output/output_{fps}_fps.mp4"
+            # Get the duration of the audio clip in seconds
+            self.duration = self.audio.duration
+        elif kwargs.get("duration"):
+            self.duration = kwargs.get("duration")
+        else:
+            # Ask the user to enter the duration of the video in seconds
+            self.duration = float(input("Please enter the duration of the video in seconds: "))
 
-# Create a video clip object from the list of frame files
-clip = mp.ImageSequenceClip(frame_files, fps=fps)
+    def merge_frames(self):
+        # Calculate the frame rate based on the number of frames and the duration
+        fps = self.frame_count / self.duration
+        fps = round(fps, 1)
+        # Define the output file name with the frame rate
+        output_file = f"output/output_{fps}_fps.mp4"
 
-# Set the audio of the video clip to the audio clip if it exists
-if os.path.exists(audio_file):
-    clip = clip.set_audio(audio)
+        full_image_paths = [os.path.join(self.frames_file, file) for file in self.frame_files]
+        # Create a video clip object from the list of frame files
+        clip = mp.ImageSequenceClip(full_image_paths, fps=fps)
 
-# Write the video clip object to the output video file
-clip.write_videofile(output_file)
+        # Set the audio of the video clip to the audio clip if it exists
+        if os.path.exists(self.audio_file):
+            clip = clip.set_audio(self.audio)
+
+        # Write the video clip object to the output video file
+        clip.write_videofile(output_file)
+        return output_file

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <head>
+    <!-- Include the Chart.js library -->
+    <title>Hello World</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/index.css') }}" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.3/chart.umd.js" integrity="sha512-wv0y1q2yUeK6D55tLrploHgbqz7ZuGB89rWPqmy6qOR9TmmzYO69YZYbGIYDmqmKG0GwOHQXlKwPyOnJ95intA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+<body>
+  <h1>Frame Interpolation Using AI-Model for Low Bitrate Video Enhancement</h1>
+  <div class="login-box">
+    <h2>System Usage</h2>
+    <!-- Create a canvas element with id 'myChart' to display the chart -->
+    <canvas id="myChart" width="800" height="400"></canvas>
+  </div>
+  <script>
+    // Define a function that pings the endpoint
+    function pingEndpoint() {
+      // Make a request to the FastAPI endpoint
+      fetch("/interpolate_status")
+        .then((response) => {
+          // Check the content type of the response
+          let contentType = response.headers.get("Content-Type");
+          if (contentType === "text/plain; charset=utf-8") {
+            // Get the URL from the response
+            return response.text();
+          } else if (contentType === "application/json") {
+            // Get the message from the response
+            return response.json();
+          } else {
+            // Throw an error if the content type is not expected
+            throw new Error("Unexpected content type: " + contentType);
+          }
+        })
+        .then((data) => {
+          // Check if the data is a URL or a message
+          if (typeof data === "string") {
+            // Redirect to the URL
+            window.location.href = data;
+          } else if (typeof data === "object") {
+            // Display the message
+            console.log(data.message);
+          } else {
+            // Throw an error if the data is not expected
+            throw new Error("Unexpected data type: " + typeof data);
+          }
+        })
+        .catch((error) => {
+          // Handle any errors
+          console.error(error);
+        });
+    }
+
+    // Call the ping function every 5 seconds
+    setInterval(pingEndpoint, 5000);
+
+
+
+  </script>
+
+
+  <script>
+      // Define a function that makes an AJAX request to the FastAPI endpoint
+      function fetchData() {
+        // Use the fetch API to send a GET request
+        fetch("http://localhost:8000/system_usage")
+          .then((response) => {
+            // Check if the response is OK
+            if (response.ok) {
+              // Parse the response as JSON
+              return response.json();
+            } else {
+              // Throw an error if the response is not OK
+              throw new Error("Something went wrong");
+            }
+          })
+          .then((data) => {
+            // Handle the data and update the chart
+            console.log(data);
+            // Get the CPU and RAM usage values
+            var cpu = data.cpu;
+            var ram = data.ram;
+            // Get the current time as a label
+            var time = new Date().toLocaleTimeString();
+            // Add the data to the chart datasets
+            myChart.data.datasets[0].data.push(cpu);
+            myChart.data.datasets[1].data.push(ram);
+            // Add the label to the chart labels
+            myChart.data.labels.push(time);
+            // Update the chart
+            myChart.update();
+          })
+          .catch((error) => {
+            // Handle any errors that might occur
+            console.error(error);
+          });
+      }
+
+      // Get the canvas element by id
+      var ctx = document.getElementById("myChart").getContext("2d");
+
+      // Create a gradient fill for CPU line chart
+      var cpuGradient = ctx.createLinearGradient(0, 0, 0, 300);
+      cpuGradient.addColorStop(0, "rgba(255, 99, 132, 1)");
+      cpuGradient.addColorStop(1, "rgba(255, 99, 132, 0)");
+
+      // Create a gradient fill for RAM line chart
+      var ramGradient = ctx.createLinearGradient(0, 0, 0, 300);
+      ramGradient.addColorStop(0, "rgba(54, 162, 235, 1)");
+      ramGradient.addColorStop(1, "rgba(54, 162, 235, 0)");
+
+      // Create a Chart.js object with type 'line' and data and options for the chart
+      var myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [], // Empty array for labels (time)
+          datasets: [
+            {
+              label: "CPU Usage (%)", // Label for CPU line chart
+              data: [], // Empty array for data (CPU usage)
+              backgroundColor: cpuGradient, // Background color for CPU line chart
+              borderColor: "rgb(255, 99, 132)", // Border color for CPU line chart
+              fill: true, // Fill area under CPU line chart
+              tension: 0.3, // Bezier curve tension for CPU line chart
+            },
+            {
+              label: "RAM Usage (%)", // Label for RAM line chart
+              data: [], // Empty array for data (RAM usage)
+              backgroundColor: ramGradient, // Background color for RAM line chart
+              borderColor: "rgb(54, 162, 235)", // Border color for RAM line chart
+              fill: true, // Fill area under RAM line chart
+              tension: 0.3, // Bezier curve tension for RAM line chart
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100,
+            },
+          },
+        },
+      });
+
+      // Call the fetchData function every second using setInterval method
+      setInterval(fetchData, 1000);
+    </script>
+</body>
+</html>

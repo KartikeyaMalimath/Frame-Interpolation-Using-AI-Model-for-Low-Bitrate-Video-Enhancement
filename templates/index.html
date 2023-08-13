@@ -13,6 +13,18 @@
 <!--                <label for="video">Select a video to upload:</label>-->
                 <input type="file" id="video" name="video" accept="video/*">
             </div>
+            <div class="user-box">
+                <select name="fps" id="fps">
+                    <option value=30>30 FPS</option>
+                    <option value=60>60 FPS</option>
+                    <option value=120>120 FPS (Warning!)</option>
+                    <option value=240>240 FPS (Warning!)</option>
+                </select>
+            </div>
+            <div class="user-box">
+                <p>Warning! >60 FPS</p>
+                <p>high compution, long waiting time</p>
+            </div>
             <a href="#" onclick="document.getElementById('upload').submit();">
               <span></span>
               <span></span>

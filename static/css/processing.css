@@ -71,7 +71,7 @@ h1 {
 
 .login-box form a {
   position: relative;
-  display: inline-block;
+  display: block;
   padding: 10px 20px;
   color: #03e9f4;
   font-size: 16px;
@@ -79,7 +79,7 @@ h1 {
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin-top: 40px;
+  margin-top: 10px;
   letter-spacing: 4px
 }
 

@@ -34,6 +34,13 @@ h1 {
   text-align: center;
 }
 
+.login-box p {
+  margin: 15px 0 0px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
 .login-box .user-box {
   position: relative;
 }
@@ -52,7 +59,7 @@ h1 {
 
 select {
   /* styling */
-  color: #fff;
+  color: red;
   background: transparent;
   border: thin solid blue;
   border-radius: 4px;
@@ -95,7 +102,7 @@ select option {
 .login-box form a {
   position: relative;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 20px 20px;
   color: #03e9f4;
   font-size: 16px;
   text-decoration: none;
