@@ -37,7 +37,6 @@ class FrameInterpolation():
         output_frames = list(self.recursive_interpolate(loaded_image_list, self.num_of_interpolate_frames, Interpolator))
         for i in range(len(output_frames)):
             media.write_image(path=f"./processing/frame{i}.png", image=output_frames[i])
-        # media.write_video("./output/output_video2.mp4", images=output_frames, fps=30)
         return True
 
 

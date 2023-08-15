@@ -49,3 +49,7 @@ class MergeFrames:
         # Write the video clip object to the output video file
         clip.write_videofile(output_file)
         return output_file
+
+if __name__ == "__main__":
+    merge_frame_handler = MergeFrames()
+    merge_frame_handler.merge_frames()

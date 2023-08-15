@@ -78,7 +78,9 @@ async def fps_reduce(request: Request, video_path: str):
     # video_path = "reduce_fps_processing/reduced_fps_video_8_fps.mp4"
     video_stats = get_video_details.get_video_stats(video_path)
     video_stats["video_path"] = video_path
-    return templates.TemplateResponse("show_video_and_stats.html", context={"message": "Video Stats", "request": request, "data": video_stats})
+    return templates.TemplateResponse("show_video_and_stats.html",
+                                      context={"message": "Video Stats",
+                                               "request": request, "data": video_stats})
 
 @app.post("/reduce_fps_upload")
 async def reduce_fps_upload(video: UploadFile, fps: int = Form(...)):
@@ -95,7 +97,8 @@ async def reduce_fps_upload(video: UploadFile, fps: int = Form(...)):
         return {"message": "Error in reducing FPS"}
 
 @app.post("/system_usage_charts")
-async def system_usage__charts(background_tasks: BackgroundTasks, request: Request, current_fps: str = Form(...), target_fps: str = Form(...), input_path: str = Form(...)):
+async def system_usage__charts(background_tasks: BackgroundTasks, request: Request,
+                               current_fps: str = Form(...), target_fps: str = Form(...), input_path: str = Form(...)):
     current_fps = int(round(float(current_fps)))
     target_fps = int(target_fps)
     background_tasks.add_task(interpolation_task, current_fps=current_fps, target_fps=target_fps, input_video=input_path)

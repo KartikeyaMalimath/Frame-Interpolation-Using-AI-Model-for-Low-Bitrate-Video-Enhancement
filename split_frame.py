@@ -14,11 +14,9 @@ class SplitFrame:
     def split_frame(self):
         # Read the video file using OpenCV
         video = cv2.VideoCapture(self.video_path)
-
         # Get the frame rate and number of frames of the video
         fps = video.get(cv2.CAP_PROP_FPS)
         frame_count = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
-
         # Loop through the frames of the video
         for i in range(frame_count):
             # Read the next frame
@@ -29,7 +27,6 @@ class SplitFrame:
             # Otherwise, break the loop
             else:
                 break
-
         # Release the video object
         video.release()
 
