@@ -6,7 +6,11 @@
   <tr>
     <td>
       <video width="320" height="240" controls>
-        <source src="https://github.com/KartikeyaMalimath/msc_project/assets/37095980/bc37e6cd-5f67-4f4c-84ea-a8538e6a026b" type="video/mp4">
+        <source src="
+
+https://github.com/KartikeyaMalimath/msc_project/assets/37095980/69fcc0e5-eae0-46a4-8b7b-c8cf7128389d
+
+" type="video/mp4">
       </video>
     </td>
     <td>
