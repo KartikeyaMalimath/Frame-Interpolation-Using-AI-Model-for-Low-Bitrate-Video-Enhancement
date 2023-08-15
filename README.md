@@ -1,5 +1,9 @@
 # msc_project
-![](https://github.com/KartikeyaMalimath/msc_project/blob/main/input/reduced_fps_video_8_fps.mp4)
+
+
+https://github.com/KartikeyaMalimath/msc_project/assets/37095980/81f25872-0e41-49a4-abe9-5ff0d005391d
+
+
 <table>
   <tr>
     <td>
