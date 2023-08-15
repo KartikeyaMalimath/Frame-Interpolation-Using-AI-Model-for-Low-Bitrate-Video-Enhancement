@@ -1,4 +1,4 @@
-# msc_project
+# Frame Interpolation Using AI-Model for Low Bitrate Video Enhancement
 
 ### User Input video at 8 FPS
 
