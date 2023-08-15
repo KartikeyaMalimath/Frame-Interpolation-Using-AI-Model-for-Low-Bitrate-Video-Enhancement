@@ -1,6 +1,16 @@
 # msc_project
 
 ### User Input video at 8 FPS
-      https://github.com/KartikeyaMalimath/msc_project/assets/37095980/81f25872-0e41-49a4-abe9-5ff0d005391d
+
+
+
+https://github.com/KartikeyaMalimath/msc_project/assets/37095980/bc37e6cd-5f67-4f4c-84ea-a8538e6a026b
+
+
+      
 ### Interpolated output video at 30 fps
-      https://github.com/KartikeyaMalimath/msc_project/assets/37095980/bbb9e031-6478-4cf9-a6c8-3cf899b0e736
+     
+
+
+https://github.com/KartikeyaMalimath/msc_project/assets/37095980/16be9be7-1bc9-4c89-a399-d09c930ca343
+
