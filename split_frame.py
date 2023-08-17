@@ -46,6 +46,6 @@ class SplitFrame:
 
 
 if __name__ == "__main__":
-    split_frame_handler = SplitFrame(input_video_path="output/output_2.8_fps.mp4")
+    split_frame_handler = SplitFrame(input_video_path="input/output_2.8_fps.mp4")
     split_frame_handler.split_frame()  # split input video to frame images
     split_frame_handler.split_audio()  # split and store audio from the input video
