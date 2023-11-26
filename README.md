@@ -23,6 +23,7 @@ https://github.com/KartikeyaMalimath/Frame-Interpolation-Using-AI-Model-for-Low-
 
 https://github.com/KartikeyaMalimath/Frame-Interpolation-Using-AI-Model-for-Low-Bitrate-Video-Enhancement/assets/37095980/fe82390f-cdb2-488e-ba01-8f5bfc67104b
 
+Courtesy: [Youtube](https://www.youtube.com/watch?v=lTi0rXkG2z8)
 
 ### Stop Motion input Frames
 
