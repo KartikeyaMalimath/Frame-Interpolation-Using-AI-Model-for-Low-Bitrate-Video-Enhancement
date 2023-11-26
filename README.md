@@ -1,5 +1,10 @@
 # Frame Interpolation Using AI-Model for Low Bitrate Video Enhancement
 
+This project explores the use of artificial intelligence (AI) to improve the quality of low bitrate video with large motion. Due to the compression of video to smaller size, often video is reduced to lower bitrate. This can result in a loss of quality. Frame interpolation is the process of generating intermediate frames between existing frames in a video. The project uses the FILM: Frame Interpolation for Large Motion [1] model by Google Research, which is a powerful AI model for frame interpolation. It is specifically designed for videos with large motion, which means that it is better at handling videos where objects are moving quickly or where there is a lot of camera movement.
+
+The project also develops a user interface, which allows users to interact with the software. The interface allows users to select the video that they want to interpolate and the desired level of quality. The software then uses the FILM model to interpolate the video and generate high-quality interpolated images, to form a high bitrate video.
+The project evaluates the performance of the software using various metrics and concludes by discussing the limitations of the software and the potential for future work. The limitations of the software include the computational complexity and the need for large datasets. The potential for future work includes the development of software to generate animated videos using image inputs, high-quality slow-motion video from a low-bit rate video and other implementation of the technology.
+
 
 ### User Input video at 8 FPS
 
