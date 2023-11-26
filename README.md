@@ -30,8 +30,39 @@ https://github.com/KartikeyaMalimath/Frame-Interpolation-Using-AI-Model-for-Low-
 
 ### Animated video from Stop motion Frames
 
-
 https://github.com/KartikeyaMalimath/Frame-Interpolation-Using-AI-Model-for-Low-Bitrate-Video-Enhancement/assets/37095980/eabc5a4f-1745-4d88-b783-f8a3b422d7f4
+
+## Future Work
+
+1. Enhanced Model Integration
+Objective: Improve low bitrate video quality through frame interpolation.
+Current Approach: Utilizing the FILM model for sophisticated frame interpolation.
+Consideration: Exploring the creation of a custom model for tailored optimization.
+Prospective Benefits: Innovation, customization, and potential overcoming of limitations.
+Challenges: Resource-intensive; careful evaluation of feasibility, benefits, and challenges.
+
+2. Cloud Deployment and Scalability
+Objective: Amplify scalability and accessibility of the frame interpolation application.
+Approach: Investigating deployment on cloud platforms for high availability, scalability, and cost-efficiency.
+Cloud Services: Video Intelligence API, Cloud Storage, Cloud CDN, and Cloud Transcoder API.
+Expected Outcomes: Optimized performance, global accessibility, resource efficiency, and enhanced user experience.
+
+3. User-Customized Interpolation
+Objective: Enhance user engagement through customization of interpolation parameters.
+Parameters: Motion magnitude and style for personalized video output.
+Benefits: Greater user control, creative expression, and adaptation to individual preferences.
+Implementation: Intuitive sliders, input fields, or preset options for accessible customization.
+Consideration: Balancing complexity and usability to ensure a user-friendly interface.
+
+4. Generating High FPS Videos from Stop Motion Images
+Objective: Transform stop motion images into high frame rate videos.
+Rationale: Enhance the aesthetics of classic stop motion animations.
+Implementation Steps:
+Input Sequence Preparation
+Frame Interpolation
+Output Video Generation
+Applications: Enhanced aesthetics, modernization of classic content, enriched educational material, and artistic expression.
+Challenges: Balancing authenticity, seamless integration, and optimizing processing.
 
 
 
